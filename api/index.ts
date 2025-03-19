@@ -12,12 +12,13 @@ const client = new OpenAI({
 });
 
 const app = express();
-const port = 3500;
+const port = 3000;
 
 // Middleware //
 app.use(cors());
 
 // Get Binds //
+app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get('/getOutput', async (req, res) => {
     try {
         const completion = await client.chat.completions.create({
@@ -55,3 +56,5 @@ app.get('/getOutput', async (req, res) => {
 app.listen(port, () => {
     console.log(`SwatInfoAIBackend listening on port ${port}`);
 });
+
+module.exports = app
