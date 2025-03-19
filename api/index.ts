@@ -57,4 +57,4 @@ app.listen(port, () => {
     console.log(`SwatInfoAIBackend listening on port ${port}`);
 });
 
-module.exports = app
+export default app;
